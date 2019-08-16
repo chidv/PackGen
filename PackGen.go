@@ -69,7 +69,7 @@ func ipMacGenerator(count int, srcIp string, srcMac string) {
 	}
 }
 
-func packetGen(connChannel chan connDetails) {
+func packetGen(connChannel <-chan connDetails) {
 
 	defer wg.Done()
 	for connDetail := range connChannel {
